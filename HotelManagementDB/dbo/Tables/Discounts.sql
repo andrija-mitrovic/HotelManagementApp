@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Discounts]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Type] NVARCHAR(50) NOT NULL, 
+    [Rate] DECIMAL(2) NOT NULL
+)
