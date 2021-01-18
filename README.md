@@ -1,2 +1,2 @@
-# HotelManagementApp
+# Hotel Management App
 Hotel Management Application
