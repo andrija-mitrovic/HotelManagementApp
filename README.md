@@ -1,5 +1,4 @@
 # Hotel Management Application
-Hotel Management Application arhitecture:
 
 - Web Portal (ASP .NET Core Web API + Angular)
   - Allow guest to book rooms
