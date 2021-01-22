@@ -12,3 +12,12 @@ Hotel Management Application arhitecture:
 
 [Download](https://www.microsoft.com/net/download) and install the .NET Core SDK and Visual Studio.
 
+## Arhitecture
+- Backend:
+  - Core
+  - Infrastructure
+  - API
+- Frontend:
+  - Angular
+  - WinForms
+
