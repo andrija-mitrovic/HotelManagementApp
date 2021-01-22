@@ -1,4 +1,4 @@
-# Hotel Management App
+# Hotel Management Application
 Hotel Management Application arhitecture:
 
 - Web Portal (ASP .NET Core Web API + Angular)
@@ -7,4 +7,8 @@ Hotel Management Application arhitecture:
 - Desktop (WinForms)
   - Check in
   - Look up reservations by name or other piece of information
+  
+## Setup
+
+[Download](https://www.microsoft.com/net/download) and install the .NET Core SDK and Visual Studio.
 
