@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using HotelManagementApp.Core.Interfaces;
+using HotelManagementApp.Infrastructure.Data;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -10,20 +12,14 @@ namespace HotelManagementApp.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration config)
         {
-            services.ConfigureDatabase(config);
             services.ConfigureInjection();
 
             return services;
         }
 
-        private static void ConfigureDatabase(this IServiceCollection services, IConfiguration config)
-        {
-
-        }
-
         private static void ConfigureInjection(this IServiceCollection services)
         {
-
+            services.AddScoped<IDataAccess, SqlDataAccess>();
         }
     }
 }

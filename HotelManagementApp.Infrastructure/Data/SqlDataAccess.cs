@@ -6,6 +6,7 @@ using System.Linq;
 using Microsoft.Extensions.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using HotelManagementApp.Core.Interfaces;
 
 namespace HotelManagementApp.Infrastructure.Data
 {

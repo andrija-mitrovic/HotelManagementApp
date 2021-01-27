@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HotelManagementApp.Infrastructure.Data
+namespace HotelManagementApp.Core.Interfaces
 {
     public interface IDataAccess
     {
