@@ -2,6 +2,7 @@
 using HotelManagementApp.Core.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace HotelManagementApp.Infrastructure.Data.Repositories
@@ -21,6 +22,14 @@ namespace HotelManagementApp.Infrastructure.Data.Repositories
                                                             new { StartDate = startDate, EndDate = endDate },
                                                             DbConfig.ConnectionStringName, 
                                                             true);
+        }
+
+        public RoomType GetRoomTypeId(int id)
+        {
+            return _dataAccess.LoadData<RoomType, dynamic>("SELECT * FROM dbo.RoomTypes WHERE Id=@Id",
+                                                            new { Id = id },
+                                                            DbConfig.ConnectionStringName,
+                                                            false).First();
         }
     }
 }
