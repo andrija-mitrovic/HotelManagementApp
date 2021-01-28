@@ -1,11 +1,9 @@
-﻿using HotelManagementApp.Core.Interfaces;
+﻿using HotelManagementApp.Core.Interfaces.Data;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace HotelManagementApp.Infrastructure.Data.Repositories
 {
-    public class ReservationRepository
+    public class ReservationRepository : IReservationRepository
     {
         private readonly IDataAccess _dataAccess;
 
@@ -14,6 +12,18 @@ namespace HotelManagementApp.Infrastructure.Data.Repositories
             _dataAccess = dataAccess;
         }
 
-
+        public void AddReservation(int roomId,int guestId, DateTime startDate, DateTime endDate)
+        {
+            _dataAccess.SaveData("dbo.spReservations_Insert",
+                                  new 
+                                  { 
+                                      RoomId = roomId, 
+                                      GuestId = guestId, 
+                                      StartDate = startDate, 
+                                      EndDate = endDate 
+                                  },
+                                  DbConfig.ConnectionStringName,
+                                  true);
+        }
     }
 }

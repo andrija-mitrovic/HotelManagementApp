@@ -1,13 +1,12 @@
-﻿using HotelManagementApp.Core.Interfaces;
+﻿using HotelManagementApp.Core.Interfaces.Data;
 using HotelManagementApp.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace HotelManagementApp.Infrastructure.Data.Repositories
 {
-    public class RoomTypeRepository
+    public class RoomTypeRepository : IRoomTypeRepository
     {
         private readonly IDataAccess _dataAccess;
 

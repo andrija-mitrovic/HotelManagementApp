@@ -1,16 +1,14 @@
-﻿using HotelManagementApp.Core.Interfaces;
+﻿using HotelManagementApp.Core.Interfaces.Data;
 using HotelManagementApp.Infrastructure.Data;
+using HotelManagementApp.Infrastructure.Data.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace HotelManagementApp.Infrastructure
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration config)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
             services.ConfigureInjection();
 
@@ -20,6 +18,10 @@ namespace HotelManagementApp.Infrastructure
         private static void ConfigureInjection(this IServiceCollection services)
         {
             services.AddScoped<IDataAccess, SqlDataAccess>();
+            services.AddScoped<IGuestRepository, GuestRepository>();
+            services.AddScoped<IReservationRepository, ReservationRepository>();
+            services.AddScoped<IRoomRepository, RoomRepository>();
+            services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
         }
     }
 }
