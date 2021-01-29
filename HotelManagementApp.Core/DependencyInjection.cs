@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using HotelManagementApp.Core.Interfaces.Services;
+using HotelManagementApp.Core.Services;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,7 +18,7 @@ namespace HotelManagementApp.Core
 
         private static void ConfigureInjection(this IServiceCollection services)
         {
-
+            services.AddScoped<IReservationService, ReservationService>();
         }
     }
 }
