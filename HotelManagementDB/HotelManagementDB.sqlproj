@@ -71,6 +71,9 @@
     <Build Include="dbo\Stored Procedures\spReservations_Insert.sql" />
     <Build Include="dbo\Stored Procedures\spRooms_GetAvailableRooms.sql" />
     <Build Include="dbo\Stored Procedures\spRoomTypes_GetAvailableTypes.sql" />
+    <Build Include="dbo\Stored Procedures\spReservations_Search.sql" />
+    <Build Include="dbo\Stored Procedures\spReservations_CheckIn.sql" />
+    <Build Include="dbo\Stored Procedures\spReservations_CheckOut.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Profiles\HotelManagementDB.publish.xml" />

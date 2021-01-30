@@ -19,6 +19,7 @@ namespace HotelManagementApp.Core
         private static void ConfigureInjection(this IServiceCollection services)
         {
             services.AddScoped<IReservationService, ReservationService>();
+            services.AddScoped<IRoomTypeService, RoomTypeService>();
         }
     }
 }

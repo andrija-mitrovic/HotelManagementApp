@@ -1,5 +1,7 @@
 ﻿using HotelManagementApp.Core.Interfaces.Data;
+using HotelManagementApp.Core.Models;
 using System;
+using System.Collections.Generic;
 
 namespace HotelManagementApp.Infrastructure.Data.Repositories
 {
@@ -21,6 +23,41 @@ namespace HotelManagementApp.Infrastructure.Data.Repositories
                                       GuestId = guestId, 
                                       StartDate = startDate, 
                                       EndDate = endDate 
+                                  },
+                                  DbConfig.ConnectionStringName,
+                                  true);
+        }
+
+        public List<ReservationFull> GetReservationsByName(string firstName, string lastName)
+        {
+            return _dataAccess.LoadData<ReservationFull, dynamic>("dbo.spReservations_Search",
+                                                                   new
+                                                                   {
+                                                                       FirstName = firstName,
+                                                                       LastName = lastName,
+                                                                       StartDate = DateTime.Now.Date
+                                                                   },
+                                                                   DbConfig.ConnectionStringName,
+                                                                   true);
+        }
+
+        public void CheckIn(int id)
+        {
+            _dataAccess.SaveData("dbo.spReservations_CheckIn",
+                                  new
+                                  {
+                                      ReservationId = id
+                                  },
+                                  DbConfig.ConnectionStringName,
+                                  true);
+        }
+
+        public void CheckOut(int id)
+        {
+            _dataAccess.SaveData("dbo.spReservations_CheckOut",
+                                  new
+                                  {
+                                      ReservationId = id
                                   },
                                   DbConfig.ConnectionStringName,
                                   true);
